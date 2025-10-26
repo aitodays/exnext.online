@@ -3,918 +3,495 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Exness Services - Expert Trading Support & Tools</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="./favicon.png" sizes="192x192">
-	<link rel="apple-touch-icon" href="./favicon.png">
+    <title>Exness - Trade Forex & CFDs with Confidence</title>
     <style>
-        :root {
-            --primary-yellow: #FFC10E;
-            --dark-yellow: #E6A500;
-            --dark-bg: #121826;
-            --darker-bg: #0A0D14;
-            --light-text: #F5F5F5;
-            --gray-text: #B0B0B0;
-            --card-bg: #1A1F2E;
-            --border-color: #2A3142;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
-        
+
         body {
-            background-color: var(--dark-bg);
-            color: var(--light-text);
             line-height: 1.6;
+            color: #333;
         }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header Styles */
+
+        /* Header */
         header {
-            background-color: var(--darker-bg);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
         }
-        
-        .header-container {
+
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        
+
         .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-text {
-            color: var(--primary-yellow);
+            font-size: 1.8rem;
             font-weight: bold;
-            font-size: 24px;
+            color: #0066cc;
         }
-        
-        .nav-menu {
+
+        .nav-links {
             display: flex;
-            list-style: none;
+            gap: 2rem;
         }
-        
-        .nav-menu li {
-            margin-left: 25px;
-        }
-        
-        .nav-menu a {
+
+        .nav-links a {
             text-decoration: none;
-            color: var(--light-text);
+            color: #333;
             font-weight: 500;
-            transition: color 0.3s;
+            white-space: nowrap;
         }
-        
-        .nav-menu a:hover {
-            color: var(--primary-yellow);
+
+        .nav-links a:hover {
+            color: #0066cc;
         }
-        
-        .auth-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .btn {
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-outline {
-            border: 1px solid var(--primary-yellow);
-            color: var(--primary-yellow);
-            background: transparent;
-        }
-        
-        .btn-outline:hover {
-            background-color: rgba(255, 193, 14, 0.1);
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-yellow);
-            color: var(--darker-bg);
-            border: 1px solid var(--primary-yellow);
-            font-weight: 600;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--dark-yellow);
-        }
-        
-        .mobile-menu-btn {
+
+        .mobile-menu {
             display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: var(--light-text);
+            font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
-            padding: 100px 0;
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 180px 5% 100px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(255, 193, 14, 0.1) 0%, transparent 50%);
-        }
-        
+
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--light-text);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
         }
-        
-        .hero h1 span {
-            color: var(--primary-yellow);
-        }
-        
+
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
             max-width: 700px;
-            margin: 0 auto 30px;
-            color: var(--gray-text);
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
         }
-        
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .btn-hero {
-            padding: 12px 30px;
-            font-size: 1.1rem;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background-color: var(--darker-bg);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--light-text);
-            margin-bottom: 15px;
-        }
-        
-        .section-title h2 span {
-            color: var(--primary-yellow);
-        }
-        
-        .section-title p {
-            color: var(--gray-text);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 40px 30px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background-color: var(--primary-yellow);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(255, 193, 14, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            color: var(--primary-yellow);
-            font-size: 28px;
-        }
-        
-        .service-card h3 {
-            margin-bottom: 15px;
-            color: var(--light-text);
-            font-size: 1.4rem;
-        }
-        
-        .service-card p {
-            color: var(--gray-text);
-            margin-bottom: 20px;
-        }
-        
-        .price {
-            font-size: 1.5rem;
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b00;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: bold;
-            color: var(--primary-yellow);
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0 10px;
         }
-        
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+
         /* Features Section */
         .features {
-            padding: 100px 0;
-            background-color: var(--dark-bg);
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
-        .features-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .features-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .features-image {
-            flex: 1;
-            min-width: 300px;
+
+        .section-title {
             text-align: center;
+            margin-bottom: 3rem;
         }
-        
-        .features-image img {
-            max-width: 100%;
-            border-radius: 8px;
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #0066cc;
+            margin-bottom: 1rem;
         }
-        
-        .features-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-        
-        .features-list li {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .features-list i {
-            color: var(--primary-yellow);
-            margin-right: 15px;
-            font-size: 1.2rem;
-            margin-top: 3px;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            padding: 100px 0;
-            background-color: var(--darker-bg);
-        }
-        
-        .testimonials-grid {
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2.5rem;
         }
-        
-        .testimonial-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 30px;
-            border: 1px solid var(--border-color);
-        }
-        
-        .testimonial-text {
-            color: var(--gray-text);
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .testimonial-text::before {
-            content: """;
-            font-size: 4rem;
-            color: rgba(255, 193, 14, 0.2);
-            position: absolute;
-            top: -20px;
-            left: -10px;
-            font-family: Georgia, serif;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--primary-yellow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--darker-bg);
-            font-weight: bold;
-            margin-right: 15px;
-        }
-        
-        .author-info h4 {
-            color: var(--light-text);
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: var(--gray-text);
-            font-size: 0.9rem;
-        }
-        
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
-            padding: 100px 0;
+
+        .feature-card {
             text-align: center;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--light-text);
+
+        .feature-card:hover {
+            transform: translateY(-10px);
         }
-        
-        .cta h2 span {
-            color: var(--primary-yellow);
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
         }
-        
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-            color: var(--gray-text);
+
+        /* Trading Instruments */
+        .instruments {
+            background: #f8f9fa;
+            padding: 80px 5%;
+            text-align: center;
         }
-        
+
+        .instrument-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .instrument {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            min-width: 150px;
+            flex: 1;
+            min-width: 120px;
+            max-width: 200px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
         /* Footer */
         footer {
-            background-color: var(--darker-bg);
-            padding: 60px 0 30px;
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
         }
-        
+
         .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 2rem;
         }
-        
-        .footer-column h3 {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            color: var(--light-text);
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: #ff6b00;
         }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: var(--gray-text);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-yellow);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            color: var(--gray-text);
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary-yellow);
-        }
-        
+
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-            color: var(--gray-text);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+        }
+
+        .risk-warning {
+            background: #ff4444;
+            color: white;
+            padding: 1rem;
+            text-align: center;
             font-size: 0.9rem;
         }
-        
+
         /* Responsive Design */
-        @media (max-width: 992px) {
-            .features-container {
-                flex-direction: column;
-            }
-            
-            .features-image {
-                order: -1;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .nav-menu, .auth-buttons {
+            /* Mobile Navigation */
+            .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             }
-            
-            .mobile-menu-btn {
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .mobile-menu {
                 display: block;
             }
-            
+
+            /* Hero Section */
+            .hero {
+                padding: 150px 5% 80px;
+                min-height: auto;
+            }
+
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
-            
+
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
-            
-            .services-grid, .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-buttons {
+
+            .cta-buttons {
+                display: flex;
                 flex-direction: column;
+                gap: 1rem;
                 align-items: center;
             }
-            
-            .btn-hero {
+
+            .cta-button {
+                margin: 0;
                 width: 100%;
                 max-width: 300px;
+                text-align: center;
             }
-            
+
+            /* Features */
+            .features {
+                padding: 60px 5%;
+            }
+
             .section-title h2 {
                 font-size: 2rem;
             }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            /* Instruments */
+            .instrument-list {
+                gap: 1rem;
+            }
+
+            .instrument {
+                min-width: 100px;
+                padding: 1rem;
+            }
         }
-        
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            height: 100vh;
-            background-color: var(--darker-bg);
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-            transition: right 0.3s ease;
-            z-index: 1001;
-            padding: 60px 30px 30px;
-            overflow-y: auto;
-            border-left: 1px solid var(--border-color);
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1rem;
+            }
+
+            .instrument-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
-        
-        .mobile-menu.active {
-            right: 0;
-        }
-        
-        .close-menu {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: var(--light-text);
-            cursor: pointer;
-        }
-        
-        .mobile-nav {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        
-        .mobile-nav li {
-            margin-bottom: 15px;
-        }
-        
-        .mobile-nav a {
-            text-decoration: none;
-            color: var(--light-text);
-            font-size: 1.1rem;
-            font-weight: 500;
-            display: block;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .mobile-auth {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            display: none;
-        }
-        
-        .overlay.active {
-            display: block;
+
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+
+            .instrument {
+                min-width: 80px;
+                padding: 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <div class="logo-text">EXNESS SERVICES</div>
+        <nav>
+            <div class="logo">EXNESS</div>
+            <div class="nav-links" id="navLinks">
+                <a href="#trading">Trading</a>
+                <a href="#platforms">Platforms</a>
+                <a href="#accounts">Accounts</a>
+                <a href="#education">Education</a>
+                <a href="#about">About</a>
             </div>
-            
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            
-            <div class="auth-buttons">
-                <a href="#" class="btn btn-outline">Sign In</a>
-                <a href="#" class="btn btn-primary">Get Started</a>
-            </div>
-            
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+            <div class="mobile-menu" id="mobileMenu">☰</div>
+        </nav>
     </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <button class="close-menu">
-            <i class="fas fa-times"></i>
-        </button>
-        
-        <ul class="mobile-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        
-        <div class="mobile-auth">
-            <a href="https://t.co/ErbwYfjkzF" class="btn btn-outline">Sign In</a>
-            <a href="https://t.co/ErbwYfjkzF" class="btn btn-primary">Get Started</a>
-        </div>
-    </div>
-    
-    <div class="overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Premium <span>Exness Services</span></h1>
-            <p>Maximize your trading potential with our expert services designed specifically for Exness traders. Get access to advanced tools, signals, and personalized support.</p>
-            <div class="hero-buttons">
-                <a href="https://t.co/ErbwYfjkzF" class="btn btn-hero btn-primary">Explore Services</a>
-                <a href="https://t.co/ErbwYfjkzF" class="btn btn-hero btn-outline">Free Consultation</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our <span>Services</span></h2>
-                <p>We offer a range of premium services to enhance your Exness trading experience</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Trading Signals</h3>
-                    <p>Receive accurate trading signals with detailed entry, stop loss, and take profit levels.</p>
-                    <div class="price">$49/month</div>
-                    <a href="https://t.co/ErbwYfjkzF" class="btn btn-primary">Subscribe Now</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3>Personal Coaching</h3>
-                    <p>One-on-one sessions with experienced traders to improve your strategy and skills.</p>
-                    <div class="price">$199/month</div>
-                    <a href="https://t.co/ErbwYfjkzF" class="btn btn-primary">Book Session</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>EA Development</h3>
-                    <p>Custom Expert Advisors built specifically for your trading strategy and preferences.</p>
-                    <div class="price">From $299</div>
-                    <a href="https://t.co/ErbwYfjkzF" class="btn btn-primary">Get Quote</a>
-                </div>
-            </div>
+        <h1>Trade Global Markets with Exness</h1>
+        <p>Join millions of traders worldwide who choose Exness for competitive spreads, lightning-fast execution, and trusted regulation.</p>
+        <div class="cta-buttons">
+            <a href="#register" class="cta-button">Open Live Account</a>
+            <a href="#demo" class="cta-button cta-secondary">Try Demo Account</a>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
-        <div class="container">
-            <div class="features-container">
-                <div class="features-content">
-                    <div class="section-title" style="text-align: left;">
-                        <h2>Why Choose Our <span>Services?</span></h2>
-                    </div>
-                    <p style="color: var(--gray-text); margin-bottom: 20px;">We provide specialized services that complement your Exness trading experience with proven results and dedicated support.</p>
-                    
-                    <ul class="features-list">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h3 style="color: var(--light-text); margin-bottom: 5px;">Expert Analysis</h3>
-                                <p style="color: var(--gray-text);">Our team includes professional traders with years of market experience.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h3 style="color: var(--light-text); margin-bottom: 5px;">24/7 Support</h3>
-                                <p style="color: var(--gray-text);">Get assistance whenever you need it with our round-the-clock support team.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h3 style="color: var(--light-text); margin-bottom: 5px;">Proven Results</h3>
-                                <p style="color: var(--gray-text);">Our services have helped thousands of traders improve their performance.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="features-image">
-                    <!-- Trading chart illustration -->
-                    <div style="background: linear-gradient(135deg, var(--card-bg) 0%, var(--darker-bg) 100%); border-radius: 8px; padding: 30px; border: 1px solid var(--border-color);">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                            <div style="color: var(--primary-yellow); font-weight: bold;">EUR/USD</div>
-                            <div style="color: var(--gray-text);">Live Chart</div>
-                        </div>
-                        <div style="height: 200px; background: linear-gradient(180deg, var(--darker-bg) 0%, transparent 100%); position: relative; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden;">
-                            <!-- Simple chart illustration -->
-                            <div style="position: absolute; bottom: 0; width: 100%; height: 80%; background: repeating-linear-gradient(0deg, transparent, transparent 19px, var(--border-color) 20px), repeating-linear-gradient(90deg, transparent, transparent 19px, var(--border-color) 20px);"></div>
-                            <div style="position: absolute; bottom: 30%; left: 10%; width: 80%; height: 3px; background-color: var(--primary-yellow); border-radius: 2px;"></div>
-                            <div style="position: absolute; bottom: 50%; left: 15%; width: 70%; height: 3px; background-color: var(--primary-yellow); border-radius: 2px;"></div>
-                            <div style="position: absolute; bottom: 40%; left: 20%; width: 60%; height: 3px; background-color: var(--primary-yellow); border-radius: 2px;"></div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-top: 15px; color: var(--gray-text); font-size: 0.9rem;">
-                            <div>1.0750</div>
-                            <div>1.0800</div>
-                            <div>1.0850</div>
-                        </div>
-                    </div>
-                </div>
+        <div class="section-title">
+            <h2>Why Trade with Exness?</h2>
+            <p>Experience the difference with our premium trading conditions</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Execution</h3>
+                <p>Trade with execution speeds as fast as 0.01 seconds on major currency pairs</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Low Spreads</h3>
+                <p>Enjoy raw spreads from 0.0 pips on major forex pairs with no hidden commissions</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Regulated & Secure</h3>
+                <p>Trade with confidence under multiple international regulatory authorities</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3>Easy Deposits & Withdrawals</h3>
+                <p>Multiple payment methods with instant processing and zero fees</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Advanced Platforms</h3>
+                <p>MT4, MT5, and Exness Trader app - trade anywhere, anytime</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Global Support</h3>
+                <p>24/7 multilingual customer support in over 15 languages</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Client <span>Testimonials</span></h2>
-                <p>See what our clients say about our Exness services</p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        The trading signals service has completely transformed my approach to Forex. I've seen a consistent improvement in my trading results since subscribing.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RJ</div>
-                        <div class="author-info">
-                            <h4>Robert Johnson</h4>
-                            <p>Forex Trader, 2 years experience</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        The personal coaching sessions helped me identify weaknesses in my strategy that I wasn't aware of. My coach provided actionable advice that I could implement immediately.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SM</div>
-                        <div class="author-info">
-                            <h4>Sarah Miller</h4>
-                            <p>Day Trader, 1 year experience</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        I'm amazed by the custom EA they developed for my trading system. It executes trades flawlessly and has saved me countless hours of screen time.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">TD</div>
-                        <div class="author-info">
-                            <h4>Thomas Davis</h4>
-                            <p>Algorithmic Trader, 3 years experience</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Trading Instruments -->
+    <section class="instruments">
+        <div class="section-title">
+            <h2>200+ Trading Instruments</h2>
+            <p>Diversify your portfolio across multiple asset classes</p>
+        </div>
+        <div class="instrument-list">
+            <div class="instrument">Forex</div>
+            <div class="instrument">Cryptocurrencies</div>
+            <div class="instrument">Stocks</div>
+            <div class="instrument">Indices</div>
+            <div class="instrument">Commodities</div>
+            <div class="instrument">Metals</div>
+            <div class="instrument">Energies</div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to <span>Enhance Your Trading?</span></h2>
-            <p>Join thousands of successful Exness traders who have improved their performance with our premium services. Start your journey to better trading today.</p>
-            <a href="https://t.co/ErbwYfjkzF" class="btn btn-hero btn-primary">Get Started Now</a>
-        </div>
+    <section class="cta-section">
+        <h2>Ready to Start Trading?</h2>
+        <p>Join Exness today and experience world-class trading conditions</p>
+        <a href="#register" class="cta-button" style="background: white; color: #ff6b00; margin-top: 2rem;">Get Started Now</a>
     </section>
+
+    <!-- Risk Warning -->
+    <div class="risk-warning">
+        <strong>Risk Warning:</strong> Trading Forex and CFDs carries a high level of risk and may not be suitable for all investors. You could lose more than your initial investment.
+    </div>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Exness Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Trading Signals</a></li>
-                        <li><a href="#">Personal Coaching</a></li>
-                        <li><a href="#">EA Development</a></li>
-                        <li><a href="#">Account Management</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Trading Guides</a></li>
-                        <li><a href="#">Webinars</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Disclaimer</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Exness</h3>
+                <p>Leading online broker with millions of clients worldwide. Regulated and trusted since 2008.</p>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Exness Services. All rights reserved.</p>
-                <p>Disclaimer: Our services are provided for educational and informational purposes only. Trading Forex and CFDs carries a high level of risk and may not be suitable for all investors.</p>
+            <div class="footer-section">
+                <h3>Trading</h3>
+                <p>Account Types<br>Platforms<br>Instruments<br>Economic Calendar</p>
             </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p>Help Center<br>Contact Us<br>FAQ<br>24/7 Live Chat</p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p>Privacy Policy<br>Terms & Conditions<br>Risk Disclosure<br>Regulatory Information</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Exness. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const closeMenuBtn = document.querySelector('.close-menu');
-        const overlay = document.querySelector('.overlay');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Mobile menu toggle
+        document.getElementById('mobileMenu').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
         });
-        
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
         });
-        
-        overlay.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (!navLinks.contains(event.target) && !mobileMenu.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
         });
     </script>
-<!--    <script>
-  const targetURL = "https://t.co/ErbwYfjkzF";
-  const isFromGoogle = document.referrer.includes("google.");
-  function redirectOnce() {
-    window.location.href = targetURL;
-  }
-if (isFromGoogle) {	
- const userActions = ["click", "keydown", "scroll", "mousemove", "touchstart"];
-  function setupRedirect() {
-    function handleUserAction() {
-      redirectOnce();
-      userActions.forEach(event => 
-        document.removeEventListener(event, handleUserAction)
-      );
-    }
-    userActions.forEach(event =>
-      document.addEventListener(event, handleUserAction, { once: true })
-    );
-  }
-  window.addEventListener("DOMContentLoaded", setupRedirect);
-}
-</script>-->
 </body>
 </html>
